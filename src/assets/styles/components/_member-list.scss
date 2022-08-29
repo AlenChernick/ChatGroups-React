@@ -1,0 +1,11 @@
+.member-list {
+  margin-inline-start: em(25px);
+  .member-list-header {
+    margin-block-end: em(24px);
+    font-family: Noto-sans;
+    font-size: em(16px);
+    font-weight: 700;
+    color: $header-text-color;
+    text-transform: uppercase;
+  }
+}

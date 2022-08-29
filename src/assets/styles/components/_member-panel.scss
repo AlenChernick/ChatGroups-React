@@ -1,0 +1,35 @@
+.member-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $user-panel-background-color;
+  max-width: 16.4vw;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 15px;
+  font-family: Noto-sans;
+  .member-panel-info {
+    display: flex;
+    align-items: center;
+    .member-panel-user-img {
+      width: em(42px);
+      height: em(42px);
+      object-fit: fill;
+      border-radius: 7px;
+      margin-inline-start: em(10px);
+      box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.164);
+    }
+    .member-panel-username {
+      font-size: em(18px);
+      color: $user-panel-name-color;
+      margin-inline-start: em(25px);
+      text-transform: capitalize;
+    }
+  }
+
+  .user-menu-icon {
+    color: $user-panel-menu-icon-color;
+    margin-inline-end: em(15px);
+  }
+}

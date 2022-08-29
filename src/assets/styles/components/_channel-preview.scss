@@ -1,0 +1,32 @@
+.channel-preview {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: Noto-sans;
+  color: $channels-color;
+  transition: 0.2s;
+  cursor: pointer;
+  &:not(:last-child) {
+    margin-block-end: 20px;
+  }
+
+  .main-channel-name {
+    font-size: em(18px);
+    margin-inline-start: 10px;
+  }
+
+  .channel-icon {
+    background-color: $app-background-color-right;
+    width: em(38px);
+    height: em(38px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline-start: em(25px);
+    font-weight: 600;
+    border-radius: 8px;
+  }
+  &:hover {
+    color: $channels-color-hover;
+  }
+}

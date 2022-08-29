@@ -1,0 +1,46 @@
+.channel-header {
+  padding: em(15px);
+  box-shadow: 0px 4px 4px 0px #00000040;
+  color: $header-text-color;
+  font-size: em(18px);
+  font-family: Noto-sans;
+
+  .main-channels {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline-start: em(10px);
+    .add-channel-icon {
+      background-color: $app-background-color-right;
+      padding: em(6px) em(7.5px);
+      border-radius: 8px;
+      text-align: center;
+      font-size: em(17px);
+      box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.182);
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        background-color: $add-channel-button;
+        box-shadow: 0px 0px 1px rgba(67, 67, 67, 0.182);
+      }
+    }
+  }
+
+  .back-to-all-channels {
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: em(4.3px) 0;
+    &:hover {
+      color: rgb(186, 186, 186);
+    }
+    span {
+      margin-inline: em(11px);
+    }
+  }
+
+  .channel-header-name {
+    margin-inline-start: em(60px);
+    padding: em(4.3px) 0;
+    text-transform: uppercase;
+  }
+}

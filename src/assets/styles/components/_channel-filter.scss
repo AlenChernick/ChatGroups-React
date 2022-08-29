@@ -1,0 +1,43 @@
+.channel-filter {
+  padding: em(20px) em(25px) em(34px) em(25px);
+  display: flex;
+  justify-content: center;
+  font-family: Noto-sans;
+  .channel-filter-actions {
+    position: relative;
+    span {
+      color: white;
+      position: absolute;
+      top: em(11px);
+      bottom: 0;
+      left: 0;
+      font-size: em(14px);
+      padding-inline-start: em(15px);
+    }
+
+    input {
+      width: em(330px);
+      height: em(48px);
+      border: none;
+      outline: transparent solid 2px;
+      border-radius: 8px;
+      background-color: $input-background;
+      transition: outline 0.2s;
+      color: white;
+      padding-inline-start: em(45px);
+      font-size: em(13px);
+
+      &:focus {
+        outline: #0079bf solid 2px;
+      }
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px $input-background inset !important;
+        box-shadow: 0 0 0 30px $input-background inset !important;
+        -webkit-text-fill-color: white;
+      }
+    }
+  }
+}

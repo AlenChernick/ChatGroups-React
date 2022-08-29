@@ -1,0 +1,95 @@
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $app-background-color-right;
+  font-family: Noto-sans;
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: em(400.02px);
+    border-radius: 24px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.253);
+    padding: em(35px) em(50px);
+    background-color: $app-background-color-left;
+
+    .signup-form-header {
+      color: $form-header;
+      font-size: 35px;
+    }
+
+    .upload-user-img {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: center;
+      width: em(128px);
+      font-size: em(21px);
+      border-radius: 8px;
+      color: $form-header;
+      background-color: $input-background;
+      padding: em(10px) em(5px);
+      transition: background-color 0.2s;
+      cursor: pointer;
+      h1 {
+        font-size: 14px;
+        margin-inline-start: em(10px);
+      }
+      &:hover {
+        background-color: $input-background-hover;
+      }
+    }
+  }
+
+  .user-img {
+    display: none;
+  }
+
+  .username {
+    width: em(180px);
+    font-family: Noto-sans;
+    padding: em(13px);
+    border-radius: 8px;
+    border: none;
+    outline: transparent solid 2px;
+    background-color: $input-background;
+    transition: outline 0.2s;
+    margin: em(25px) 0;
+    color: white;
+    font-size: em(15px);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.338);
+    &:focus {
+      outline: #0079bf solid 2px;
+    }
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 30px $input-background inset !important;
+      box-shadow: 0 0 0 30px $input-background inset !important;
+      -webkit-text-fill-color: white;
+    }
+  }
+  button {
+    width: em(135px);
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: em(12px);
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: em(15px);
+    margin-block-start: em(25px);
+    cursor: pointer;
+    background-color: $form-save-btn;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.484);
+    transition: background-color 0.2s;
+    &:hover {
+      background-color: $form-save-btn-hover;
+    }
+  }
+}

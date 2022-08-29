@@ -1,0 +1,23 @@
+.channel-info {
+  min-height: 95vh;
+  grid-column: 1;
+  background-color: $app-background-color-left;
+
+  .channel-inner-info {
+    .channel-name {
+      font-size: em(16px);
+      margin: em(25px) em(25px) em(17px) em(25px);
+      color: $header-text-color;
+      font-family: Noto-sans;
+      text-transform: uppercase;
+    }
+    .channel-description {
+      padding: 0 em(15px) em(17px) em(25px);
+      word-wrap: break-word;
+      font-family: Noto-sans;
+      font-size: em(16px);
+      font-weight: 200;
+      color: $header-text-color;
+    }
+  }
+}

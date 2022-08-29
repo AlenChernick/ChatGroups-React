@@ -1,0 +1,50 @@
+// COLORS
+$header-text-color: #e0e0e0;
+$app-background-color: linear-gradient(90deg, rgba(37, 35, 41, 1) 16%, rgba(18, 15, 19, 1) 16%);
+$app-background-color-left: #120f13;
+$app-background-color-right: #252329;
+$text-color: #828282;
+$input-background: #3c393f;
+$input-background-hover: #504c54;
+$send-button-background: #2f80ed;
+$send-button-background-hover: #1b4986;
+$add-channel-button: #403d46;
+$channels-color: #bdbdbd;
+$channels-color-hover: #eaeaea;
+$form-save-btn: #2f80ed;
+$form-save-btn-hover: #0a74ff8f;
+$form-header: #f2f2f2;
+$user-panel-background-color: #0b090c;
+$user-panel-name-color: #828282;
+$user-panel-menu-icon-color: #bdbdbd;
+
+$dark-color: #000000;
+$dark-color1: #212529;
+$dark-color2: #333;
+$dark-color3: #343a40;
+$dark-color4: #525252;
+$dark-color5: #495057;
+$dark-color7: #9a9a9a;
+
+$light-color: #ffffff;
+$light-color1: #f8f9fa;
+$light-color2: #f1f3f5;
+$light-color3: #e9ecef;
+$light-color4: #eeeeee;
+$light-color5: #adb5bd;
+
+// LAYOUT
+$layoutPadding: 40px;
+$layoutBeta: 146px;
+
+// LAYOUT BREAKPOINTS
+$break-mobile: 580px;
+$break-small: 620px;
+$break-medium: 860px;
+$break-narrow: 580px;
+$break-normal: 1300px;
+$break-wide: 1500px;
+
+$padded-break-narrow: $break-narrow + $layoutPadding * 2;
+$padded-break-normal: $break-normal + $layoutPadding * 2;
+$padded-break-wide: $break-wide + $layoutPadding * 2;

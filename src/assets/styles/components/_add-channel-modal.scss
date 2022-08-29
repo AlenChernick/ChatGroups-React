@@ -1,0 +1,85 @@
+.add-channel-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $app-background-color-left;
+  width: em(500.02px);
+  padding: em(30px) em(45px);
+  border-radius: 24px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.253);
+  font-family: Noto-sans;
+
+  .form-header {
+    font-size: em(15px);
+    color: $form-header;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-block-end: em(10px);
+  }
+
+  input,
+  textarea {
+    &.form-channel-description {
+      padding: 13px 13px 50px 13px;
+      font-size: 15px;
+      resize: none;
+    }
+    font-family: Noto-sans;
+    padding: em(13px);
+    border-radius: 8px;
+    border: none;
+    outline: transparent solid 2px;
+    background-color: $input-background;
+    transition: outline 0.2s;
+    margin-block: em(10px);
+    color: white;
+    font-size: em(15px);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.338);
+    word-wrap: break-word;
+
+    &:focus {
+      outline: #0079bf solid 2px;
+    }
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 30px $input-background inset !important;
+      box-shadow: 0 0 0 30px $input-background inset !important;
+      -webkit-text-fill-color: white;
+    }
+  }
+  .form-save-btn {
+    width: em(90px);
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    padding: em(10px);
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: em(14px);
+    cursor: pointer;
+    background-color: $form-save-btn;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.484);
+    transition: 0.2s;
+    &:hover {
+      background-color: $form-save-btn-hover;
+    }
+  }
+}
+
+.modal-screen {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #120f1380;
+  cursor: pointer;
+}

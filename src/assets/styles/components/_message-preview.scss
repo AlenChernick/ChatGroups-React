@@ -1,0 +1,50 @@
+.message-preview {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  grid-template-columns: 2.625em auto 1fr;
+  grid-template-rows: em(20px);
+  grid-template-areas:
+    'member-img member-name member-send-at'
+    'member-img member-message member-message';
+
+  &:not(:last-child) {
+    margin-block-end: em(38px);
+  }
+
+  .member-img {
+    width: em(42px);
+    height: em(42px);
+    object-fit: fill;
+    border-radius: 7px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.164);
+    grid-area: member-img;
+  }
+  .member-name {
+    font-size: em(16px);
+    margin-inline-start: em(15px);
+    color: $text-color;
+    font-family: Noto-sans;
+    grid-area: member-name;
+    text-transform: capitalize;
+  }
+  .member-send-at {
+    margin-block-start: em(3px);
+    margin-inline-start: em(15px);
+    font-size: em(12px);
+    color: $text-color;
+    font-family: Noto-sans;
+    font-weight: 500;
+    grid-area: member-send-at;
+  }
+  .member-message {
+    margin-inline-start: em(15px);
+    font-size: em(16px);
+    font-family: Noto-sans;
+    font-weight: 500;
+    color: $header-text-color;
+    margin-block-start: em(8px);
+    word-break: break-word;
+    grid-area: member-message;
+  }
+}
