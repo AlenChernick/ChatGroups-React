@@ -2,6 +2,8 @@
   min-height: 95vh;
   grid-column: 1;
   background-color: $app-background-color-left;
+  position: relative;
+  animation: fade-in 0.5s ease-out;
 
   .channel-inner-info {
     .channel-name {

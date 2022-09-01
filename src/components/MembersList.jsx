@@ -1,4 +1,3 @@
-import React from 'react'
 import { MemberPreview } from './MemberPreview.jsx'
 
 export const MemberList = ({ members }) => {

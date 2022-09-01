@@ -1,14 +1,15 @@
 .add-message {
-  bottom: em(28px);
+  bottom: em(40px);
   display: flex;
   justify-content: center;
   font-family: Noto-sans;
+  position: absolute;
+  animation: move-in 0.5s none;
+  transition: 0.2s;
 
   .actions-container {
-    position: absolute;
-    bottom: em(45px);
+    margin-left: 4.6875em;
     input {
-      bottom: em(39px);
       min-width: 76.5vw;
       padding: em(17px) 0 em(17px) em(17px);
       background-color: $input-background;
@@ -49,5 +50,14 @@
         background-color: $send-button-background-hover;
       }
     }
+  }
+}
+
+@keyframes move-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
   }
 }

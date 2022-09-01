@@ -1,5 +1,5 @@
-import { channelService } from '../services/channel.service'
 import { useNavigate } from 'react-router-dom'
+import { channelService } from '../services/channel.service'
 
 export const ChannelPreview = ({ channel, loggedInMember }) => {
   const navigate = useNavigate()

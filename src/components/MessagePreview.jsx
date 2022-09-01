@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const MessagePreview = ({ message }) => {
   return (
     <section className='message-preview'>

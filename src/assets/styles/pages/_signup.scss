@@ -10,6 +10,7 @@
     align-items: center;
     position: relative;
     width: em(400.02px);
+    height: em(360px);
     border-radius: 24px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.253);
     padding: em(35px) em(50px);
@@ -17,7 +18,8 @@
 
     .signup-form-header {
       color: $form-header;
-      font-size: 35px;
+      font-size: 45px;
+      margin-bottom: em(5px);
     }
 
     .upload-user-img {

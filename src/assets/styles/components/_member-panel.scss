@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: $user-panel-background-color;
-  max-width: 16.4vw;
+  // max-width: 16.4vw;
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -31,5 +31,10 @@
   .user-menu-icon {
     color: $user-panel-menu-icon-color;
     margin-inline-end: em(15px);
+    cursor: pointer;
+    transition: color 0.2s;
+    &:hover {
+      color: $user-panel-name-color;
+    }
   }
 }

@@ -7,7 +7,8 @@ import { channelService } from '../services/channel.service'
 import { userService } from '../services/user.service'
 
 export const ChatApp = () => {
-  let [isModalOpen, setModal] = useState(false)
+  let [isChannelModalOpen, setChannelModal] = useState(false)
+  let [isUserActionsModalOpen, setUserActionsModal] = useState(false)
   const [channels, setChannels] = useState([])
   const [filterBy, setFilterBy] = useState(null)
   const [channel, setChannel] = useState([])
@@ -35,6 +36,11 @@ export const ChatApp = () => {
     setLoggedInMember(loggedInMember)
   }, [])
 
+  useEffect(() => {
+    params.id ? loadChannel() : loadChannels()
+    loadLoggedInMember()
+  }, [params.id, loadChannels, loadChannel, loadLoggedInMember])
+
   const onChangeFilter = useCallback(
     (filterBy) => {
       setFilterBy(filterBy)
@@ -42,11 +48,6 @@ export const ChatApp = () => {
     },
     [loadChannels]
   )
-
-  useEffect(() => {
-    params.id ? loadChannel() : loadChannels()
-    loadLoggedInMember()
-  }, [params.id, loadChannels, loadChannel, loadLoggedInMember])
 
   const onAddMessage = (ev) => {
     ev.preventDefault()
@@ -63,11 +64,20 @@ export const ChatApp = () => {
     if (name.value === '' || description.value === '') return
     channelService.addChannel(name.value, description.value, loggedInMember)
     loadChannels()
-    setModal(false)
+    setChannelModal(false)
   }
 
-  const onToggleModal = () => {
-    setModal((isModalOpen = !isModalOpen))
+  const onLogout = () => {
+    userService.logout()
+    navigate('/signup')
+  }
+
+  const onToggleChannelModal = () => {
+    setChannelModal((isChannelModalOpen = !isChannelModalOpen))
+  }
+
+  const onUserActionsModalOpen = () => {
+    setUserActionsModal((isUserActionsModalOpen = !isUserActionsModalOpen))
   }
 
   const onGoBack = () => {
@@ -81,11 +91,14 @@ export const ChatApp = () => {
         channel={channel}
         members={members}
         loggedInMember={loggedInMember}
+        isUserActionsModalOpen={isUserActionsModalOpen}
         onGoBack={onGoBack}
+        onLogout={onLogout}
         onChangeFilter={onChangeFilter}
-        onToggleModal={onToggleModal}
+        onToggleChannelModal={onToggleChannelModal}
+        onUserActionsModalOpen={onUserActionsModalOpen}
       />
-      {isModalOpen ? <AddChannelModal onAddChannel={onAddChannel} onToggleModal={onToggleModal} /> : ''}
+      {isChannelModalOpen ? <AddChannelModal onAddChannel={onAddChannel} onToggleChannelModal={onToggleChannelModal} /> : ''}
       <ChannelActions messages={messages} channel={channel} onAddMessage={onAddMessage} />
     </section>
   )

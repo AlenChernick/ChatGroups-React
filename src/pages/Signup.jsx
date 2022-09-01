@@ -16,7 +16,7 @@ export const Signup = () => {
     setLoading(true)
     const { name, img } = ev.target.elements
     const res = await userService.uploadUserImg(img.files[0])
-    userService.signup(name.value, res.url)
+    await userService.signup(name.value, res.url)
     navigate('/')
   }
 
@@ -27,7 +27,17 @@ export const Signup = () => {
       ) : (
         <form className='signup-form' onSubmit={onSignup}>
           <label className='signup-form-header'>Sign up</label>
-          <input onChange={handleChange} type='text' name='name' id='name' className='username' maxLength={8} placeholder='Username' required />
+          <input
+            onChange={handleChange}
+            type='text'
+            name='name'
+            id='name'
+            className='username'
+            minLength={3}
+            maxLength={15}
+            placeholder='Username'
+            required
+          />
           <label>
             <span className='upload-user-img'>
               <h1>Choose image</h1>

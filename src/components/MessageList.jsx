@@ -1,4 +1,3 @@
-import React from 'react'
 import { MessagePreview } from './MessagePreview'
 
 export const MessageList = ({ messages }) => {

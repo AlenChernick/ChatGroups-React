@@ -9,6 +9,7 @@ const App = () => {
     const loggedInUser = userService.getLoggedInUser()
     return loggedInUser ? children : <Navigate to='/signup' />
   }
+
   return (
     <Router>
       <section className='main-app main-layout'>
@@ -17,7 +18,7 @@ const App = () => {
             path='/'
             element={
               <PrivateRoute>
-                <ChatApp />
+                <Navigate replace to='/welcome-channel' />
               </PrivateRoute>
             }
           />

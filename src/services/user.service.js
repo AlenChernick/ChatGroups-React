@@ -1,11 +1,11 @@
 import axios from 'axios'
-import { storageService } from "./async-storage.service"
-import { utilService } from "./util.service"
+// import { storageService } from "./async-storage.service"
+import { httpService } from './http.service'
 
 
 export const userService = {
     // login,
-    // logout,
+    logout,
     signup,
     getLoggedInUser,
     uploadUserImg
@@ -13,26 +13,29 @@ export const userService = {
 
 const USER_KEY = 'userDB'
 
-
-function getLoggedInUser() {
-    return storageService.load(USER_KEY)
-}
-
-function _getEmptyUser() {
-    return {
-        _id: utilService.makeId(),
-        name: '',
-        img: '',
+async function signup(name, img) {
+    try {
+        const newUser = _getEmptyUser()
+        newUser.name = name
+        newUser.img = img
+        const user = await httpService.post('auth/signup', newUser)
+        if (user) return _saveLocalUser(user)
+    } catch (err) {
+        console.log('Cannot signup user', err)
+        throw err
     }
 }
 
-function signup(name, img) {
-    const user = _getEmptyUser()
-    user.name = name
-    user.img = img
-    storageService.save(USER_KEY, user)
+async function logout() {
+    // localStorage.removeItem(USER_KEY)
+    try {
+        sessionStorage.setItem(USER_KEY, null)
+        return await httpService.post('auth/logout')
+    } catch (err) {
+        console.log('Cannot logout', err)
+        throw err
+    }
 }
-
 
 async function uploadUserImg(file) {
     // Defining our variables
@@ -51,6 +54,29 @@ async function uploadUserImg(file) {
         console.error('ERROR!', err)
     }
 }
+
+
+function _saveLocalUser(user) {
+    sessionStorage.setItem(USER_KEY, JSON.stringify(user))
+    return user
+}
+
+function getLoggedInUser() {
+    return JSON.parse(sessionStorage.getItem(USER_KEY))
+}
+
+function _getEmptyUser() {
+    return {
+        // _id: utilService.makeId(),
+        name: '',
+        img: '',
+    }
+}
+
+
+
+
+
 
 
 
